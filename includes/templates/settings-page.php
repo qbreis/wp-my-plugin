@@ -26,19 +26,52 @@ if (!defined('ABSPATH')) {
     <?php //wp_editor( 'zxczc', 'test-wp-editor-2' ); ?>
     <form method="POST">
         <?php wp_nonce_field( 'my_plugin_update', 'my_plugin_submission' ); ?>
-        <label for="my_plugin_custom_field">
-            <?php _e('My plugin custom field');?>
-        </label>
-        <input 
-            name="my_plugin_custom_field" 
-            id="my_plugin_custom_field" 
-            type="text" 
-            value="<?php echo get_option('my_plugin_custom_field'); ?>" 
-            class="regular-text" 
-            />
-            <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Save' )?>">
-            </p>
+
+        <table class="form-table" onclick="showHide( '#my_plugin_is_active', '.my-plugin-active-settings' );">
+            <tbody>
+                <tr>
+                    <th>
+                        <label for="my_plugin_is_active">
+                            Activate my plugin
+                        </label>
+                    </th>
+                    <td>
+                        <input 
+                            name="my_plugin_is_active" 
+                            id="my_plugin_is_active" 
+                            type="checkbox" 
+                            value="1" 
+                            class="regular-text"
+                            <?php if ( get_option('my_plugin_is_active') ) echo ' checked="checked"';?> 
+                            />
+                        <label for="my_plugin_is_active">Active</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="form-table my-plugin-active-settings hidden">
+            <tbody>
+                <tr>
+                    <th>
+                        <label for="my_plugin_custom_field">
+                            My plugin custom field
+                        </label>
+                    </th>
+                    <td>
+                        <input 
+                            name="my_plugin_custom_field" 
+                            id="my_plugin_custom_field" 
+                            type="text" 
+                            value="<?php echo get_option('my_plugin_custom_field'); ?>" 
+                            class="regular-text" 
+                            />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="submit">
+            <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Save' )?>">
+        </p>
     </form>
     
 
