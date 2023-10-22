@@ -47,7 +47,9 @@ function handle_form($my_plugin_submission) {
     } else {
         
         $my_plugin_custom_field = (isset($_POST['my_plugin_custom_field']))?sanitize_text_field( $_POST['my_plugin_custom_field'] ):'';
+        $my_plugin_is_active = (isset($_POST['my_plugin_is_active']))?sanitize_text_field( $_POST['my_plugin_is_active'] ):'';
 
         update_option( 'my_plugin_custom_field', $my_plugin_custom_field );
+        update_option( 'my_plugin_is_active', $my_plugin_is_active );
     }
 }
