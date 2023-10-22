@@ -8,10 +8,8 @@ if (!defined('ABSPATH')) {
 <div class="wrap">
         
     <h1 class="wp-heading-inline" style="margin-bottom: 10px;">
-        <?=MY_PLUGIN_DATA['Plugin Name']?> (v<?=MY_PLUGIN_DATA['Version']?>) 
-        <a href="admin.php?page=carte-interactive&action=new" class="page-title-action">
-            Ajouter
-        </a>
+        <img src="<?=MY_PLUGIN_URL?>images/my-plugin-logo.svg" class="my-plugin-logo" />
+        <?=MY_PLUGIN_DATA['Plugin Name']?> (v<?=MY_PLUGIN_DATA['Version']?>)
     </h1>
     <?php
     $my_plugin_submission = (isset($_POST['my_plugin_submission']))?sanitize_text_field( $_POST['my_plugin_submission'] ):'';
