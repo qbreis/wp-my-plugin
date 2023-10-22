@@ -1,1 +1,3 @@
 .wrap { border: 2px #00f solid; }
+.wrap .wp-heading-inline { display: inline-flex !important;align-items: center; }
+.wrap .wp-heading-inline .my-plugin-logo { height: 40px;width: auto;padding-right: 0.5em; }
