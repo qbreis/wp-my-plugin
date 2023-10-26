@@ -3,6 +3,8 @@
  * 
  * Plugin name: My Plugin
  * Description: My Plugin skeleton getting some points from https://www.youtube.com/watch?v=Bx0oisOOqNg
+ * Author: Enric Gatell
+ * Author URI: https://github.com/qbreis
  * Version: 1.0.0
  * Text Domain: my-plugin
  * 
