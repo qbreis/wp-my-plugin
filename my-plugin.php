@@ -28,6 +28,8 @@ if( !class_exists('MyPlugin') )
 
             define( 'MY_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
+            define( 'MY_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+
             define(
                 'MY_PLUGIN_DATA', 
                 get_file_data(
@@ -46,21 +48,11 @@ if( !class_exists('MyPlugin') )
         {
             include_once MY_PLUGIN_PATH . 'includes/utilities.php';
 
-            include_once MY_PLUGIN_PATH . 'includes/my-plugin-page.php';
+            include_once MY_PLUGIN_PATH . 'admin/my-plugin-page.php';
 
-            include_once MY_PLUGIN_PATH . 'includes/my-plugin.php';
+            include_once MY_PLUGIN_PATH . 'public/my-plugin.php';
         }
     }
-
-
-    add_action( 'plugins_loaded', 'keydesign_addon_load_textdomain' );
-    function keydesign_addon_load_textdomain() {
-        load_plugin_textdomain( 'my-plugin', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-    }
-
-
-
     $myPlugin = new MyPlugin;
     $myPlugin->initialize();
-
 }

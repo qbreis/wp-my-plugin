@@ -10,16 +10,13 @@ if (!defined('ABSPATH')) {
     <h1 class="wp-heading-inline" style="margin-bottom: 10px;">
         <img src="<?=MY_PLUGIN_URL?>images/my-plugin-logo.svg" class="my-plugin-logo" />
         <?=MY_PLUGIN_DATA['Plugin Name']?> (v<?=MY_PLUGIN_DATA['Version']?>)
-
-        <p>--<?= __('Test', 'my-plugin');?>, <?= __('Test2', 'my-plugin');?></p>
-        <hr />
     </h1>
     <?php
     $my_plugin_submission = (isset($_POST['my_plugin_submission']))?sanitize_text_field( $_POST['my_plugin_submission'] ):'';
     if( $my_plugin_submission){
     ?>
         <div class="updated">
-            <p>Your fields were saved!</p>
+            <p><?=__('Your fields were saved!', 'my-plugin');?></p>
         </div>
     <?php
     }
@@ -33,7 +30,7 @@ if (!defined('ABSPATH')) {
                 <tr>
                     <th>
                         <label for="my_plugin_is_active">
-                            Activate my plugin
+                        <?=__('Activate my plugin', 'my-plugin');?>
                         </label>
                     </th>
                     <td>
@@ -45,7 +42,7 @@ if (!defined('ABSPATH')) {
                             class="regular-text"
                             <?php if ( get_option('my_plugin_is_active') ) echo ' checked="checked"';?> 
                             />
-                        <label for="my_plugin_is_active">Active</label>
+                        <label for="my_plugin_is_active"><?= __('Active', 'my-plugin');?></label>
                     </td>
                 </tr>
             </tbody>
@@ -55,7 +52,7 @@ if (!defined('ABSPATH')) {
                 <tr>
                     <th>
                         <label for="my_plugin_custom_field">
-                            My plugin custom field
+                            <?=__('My plugin custom field', 'my-plugin');?>
                         </label>
                     </th>
                     <td>
@@ -71,7 +68,7 @@ if (!defined('ABSPATH')) {
             </tbody>
         </table>
         <p class="submit">
-            <input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Save' )?>">
+            <input type="submit" name="submit" id="submit" class="button button-primary" value="<?=__( 'Save' )?>">
         </p>
     </form>
     
