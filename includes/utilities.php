@@ -27,15 +27,15 @@ function create_plugin_settings_page() {
 
 function plugin_settings_page_content() {
 
-    wp_enqueue_script( 'my-plugin', MY_PLUGIN_URL . 'includes/js/my-plugin.js' );
+    wp_enqueue_script( 'my-plugin', MY_PLUGIN_URL . 'admin/js/my-plugin.js' );
 
-    wp_enqueue_style( 'my-plugin', MY_PLUGIN_URL . 'includes/css/my-plugin.css' );
+    wp_enqueue_style( 'my-plugin', MY_PLUGIN_URL . 'admin/css/my-plugin.css' );
 
     $my_plugin_submission = (isset($_POST['my_plugin_submission']))?sanitize_text_field( $_POST['my_plugin_submission'] ):'';
     if( $my_plugin_submission){
         handle_form($my_plugin_submission);
     }
-    include (MY_PLUGIN_PATH.'includes/templates/settings-page.php'); 
+    include (MY_PLUGIN_PATH.'admin/settings-page.php'); 
 }
 
 function handle_form($my_plugin_submission) {

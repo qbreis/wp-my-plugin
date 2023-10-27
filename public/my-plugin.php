@@ -8,9 +8,9 @@ function my_plugin(){
         return '';
         die();
     }
-    wp_enqueue_style( 'my-plugin', MY_PLUGIN_URL . 'css/my-plugin.css' );
-    wp_enqueue_script( 'my-plugin', MY_PLUGIN_URL . 'js/my-plugin.js' );
+    wp_enqueue_style('my-plugin', MY_PLUGIN_URL.'public/css/my-plugin.css');
+    wp_enqueue_script('my-plugin', MY_PLUGIN_URL.'public/js/my-plugin.js');
     ob_start();
-    include_once MY_PLUGIN_PATH.'includes/templates//my-plugin.php';
+    include_once MY_PLUGIN_PATH.'public/templates/my-plugin.php';
     return ob_get_clean();
 }

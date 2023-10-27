@@ -48,9 +48,9 @@ if( !class_exists('MyPlugin') )
         {
             include_once MY_PLUGIN_PATH . 'includes/utilities.php';
 
-            include_once MY_PLUGIN_PATH . 'includes/my-plugin-page.php';
+            include_once MY_PLUGIN_PATH . 'admin/my-plugin-page.php';
 
-            include_once MY_PLUGIN_PATH . 'includes/my-plugin.php';
+            include_once MY_PLUGIN_PATH . 'public/my-plugin.php';
         }
     }
     $myPlugin = new MyPlugin;
