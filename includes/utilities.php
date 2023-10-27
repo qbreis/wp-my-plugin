@@ -25,6 +25,10 @@ function create_plugin_settings_page() {
     );
 }
 
+/**
+ * 
+ * Enqueue the admin-specific stylesheet and JavaScript.
+ */
 function plugin_settings_page_content() {
 
     // Register the JavaScript for the admin area.
@@ -33,6 +37,7 @@ function plugin_settings_page_content() {
     // Register the stylesheets for the admin area.
     wp_enqueue_style( 'my-plugin', MY_PLUGIN_URL . 'admin/css/my-plugin.css' );
 
+    // It sanitize post fields
     $my_plugin_submission = (
         isset($_POST['my_plugin_submission']))
         ?
@@ -40,6 +45,7 @@ function plugin_settings_page_content() {
         :
         ''
         ;
+    
     if( $my_plugin_submission){
         handle_form($my_plugin_submission);
     }
