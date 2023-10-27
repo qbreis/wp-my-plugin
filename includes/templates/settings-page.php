@@ -10,6 +10,9 @@ if (!defined('ABSPATH')) {
     <h1 class="wp-heading-inline" style="margin-bottom: 10px;">
         <img src="<?=MY_PLUGIN_URL?>images/my-plugin-logo.svg" class="my-plugin-logo" />
         <?=MY_PLUGIN_DATA['Plugin Name']?> (v<?=MY_PLUGIN_DATA['Version']?>)
+
+        <p>--<?= __('Permalink Settings for Custom Post Types', 'my-plugin');?></p>
+        <hr />
     </h1>
     <?php
     $my_plugin_submission = (isset($_POST['my_plugin_submission']))?sanitize_text_field( $_POST['my_plugin_submission'] ):'';

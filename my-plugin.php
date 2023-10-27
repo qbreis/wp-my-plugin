@@ -6,6 +6,7 @@
  * Author: Enric Gatell
  * Author URI: https://github.com/qbreis
  * Version: 1.0.0
+ * Domain Path: /language/
  * Text Domain: my-plugin
  * 
  */
@@ -54,4 +55,3 @@ if( !class_exists('MyPlugin') )
     $myPlugin->initialize();
 
 }
-
