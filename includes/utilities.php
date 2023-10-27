@@ -53,3 +53,7 @@ function handle_form($my_plugin_submission) {
         update_option( 'my_plugin_is_active', $my_plugin_is_active );
     }
 }
+
+function my_plugin_load_textdomain() {
+    load_plugin_textdomain( 'my-plugin', false,  dirname( MY_PLUGIN_BASENAME ) . '/languages/' );
+}
