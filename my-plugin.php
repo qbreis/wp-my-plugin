@@ -2,12 +2,13 @@
 /**
  * 
  * Plugin name: My Plugin
- * Description: My Plugin skeleton getting some points from https://www.youtube.com/watch?v=Bx0oisOOqNg
+ * Description: My Plugin skeleton getting some points from https://www.youtube.com/watch?v=Bx0oisOOqNg 
  * Author: Enric Gatell
  * Author URI: https://github.com/qbreis
  * Version: 1.0.0
- * Domain Path: /language/
+ * 
  * Text Domain: my-plugin
+ * Domain Path: /language/
  * 
  */
 
@@ -50,6 +51,14 @@ if( !class_exists('MyPlugin') )
             include_once MY_PLUGIN_PATH . 'includes/my-plugin.php';
         }
     }
+
+
+    add_action( 'plugins_loaded', 'keydesign_addon_load_textdomain' );
+    function keydesign_addon_load_textdomain() {
+        load_plugin_textdomain( 'my-plugin', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    }
+
+
 
     $myPlugin = new MyPlugin;
     $myPlugin->initialize();

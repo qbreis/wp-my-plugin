@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
         <img src="<?=MY_PLUGIN_URL?>images/my-plugin-logo.svg" class="my-plugin-logo" />
         <?=MY_PLUGIN_DATA['Plugin Name']?> (v<?=MY_PLUGIN_DATA['Version']?>)
 
-        <p>--<?= __('Permalink Settings for Custom Post Types', 'my-plugin');?></p>
+        <p>--<?= __('Test', 'my-plugin');?>, <?= __('Test2', 'my-plugin');?></p>
         <hr />
     </h1>
     <?php
