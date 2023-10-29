@@ -11,10 +11,10 @@ function create_plugin_settings_page() {
     $capability = 'manage_options';
     $slug = MY_PLUGIN_DATA['Text Domain'];
     $callback = 'plugin_settings_page_content';
-    $icon = MY_PLUGIN_URL
-        .(MY_PLUGIN_DATA['Menu admin icon'])
+    $icon = 
+        (MY_PLUGIN_DATA['Menu admin icon'])
         ?
-        MY_PLUGIN_DATA['Menu admin icon']
+        MY_PLUGIN_URL.MY_PLUGIN_DATA['Menu admin icon']
         :
         'dashicons-admin-generic'
         ;
