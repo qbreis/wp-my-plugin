@@ -52,9 +52,17 @@ if( !class_exists('MyPlugin') )
         {
             include_once MY_PLUGIN_PATH . 'includes/utilities.php';
 
-            include_once MY_PLUGIN_PATH . 'admin/my-plugin-admin.php';
+            // Add shortcut capabilities
+            add_shortcode('my-plugin', 'my_plugin_shortcode');
 
-            include_once MY_PLUGIN_PATH . 'public/my-plugin.php';
+            // Add admin menu item.
+            add_action('admin_menu', 'create_plugin_settings_page');
+
+            // Define the locale for this plugin for internationalization.
+            add_action('plugins_loaded', 'my_plugin_load_textdomain');
+
+
+            //include_once MY_PLUGIN_PATH . 'public/my-plugin-public.php';
         }
     }
     $myPlugin = new MyPlugin;
