@@ -6,6 +6,8 @@
  * Author: Enric Gatell
  * Author URI: https://github.com/qbreis
  * Version: 1.0.0
+ * Menu admin icon: /admin/images/my-plugin-menu-icon.png
+ * Title admin icon: /admin/images/my-plugin-logo.svg
  * 
  * Text Domain: my-plugin
  * Domain Path: /language/
@@ -38,6 +40,8 @@ if( !class_exists('MyPlugin') )
                         'Version' => 'Version', 
                         'Plugin Name' => 'Plugin Name',
                         'Text Domain' => 'Text Domain',
+                        'Menu admin icon' => 'Menu admin icon',
+                        'Title admin icon' => 'Title admin icon',
                     ), 
                     false
                 )

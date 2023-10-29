@@ -16,7 +16,9 @@ if (!defined('ABSPATH')) {
 <div class="wrap">
         
     <h1 class="wp-heading-inline" style="margin-bottom: 10px;">
-        <img src="<?=MY_PLUGIN_URL?>images/my-plugin-logo.svg" class="my-plugin-logo" />
+        <?php if(MY_PLUGIN_DATA['Title admin icon']){?>
+            <img src="<?=MY_PLUGIN_URL.MY_PLUGIN_DATA['Title admin icon']?>" class="my-plugin-logo" />
+        <?php } ?>
         <?=MY_PLUGIN_DATA['Plugin Name']?> (v<?=MY_PLUGIN_DATA['Version']?>)
     </h1>
     <?php
