@@ -14,24 +14,17 @@
  * 
  */
 
-if( !defined('ABSPATH') )
-{
-      die('You cannot be here');
+if( !defined('ABSPATH') ) {
+    die('You cannot be here');
 }
 
-if( !class_exists('MyPlugin') )
-{
-    class MyPlugin
-    {
-        
-        public function __construct()
-        {
+if(!class_exists('MyPlugin')){
+    class MyPlugin{
+
+        public function __construct(){
             define( 'MY_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-
             define( 'MY_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-
             define( 'MY_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-
             define(
                 'MY_PLUGIN_DATA', 
                 get_file_data(
@@ -48,8 +41,7 @@ if( !class_exists('MyPlugin') )
             );
         }
 
-        public function initialize()
-        {
+        public function initialize(){
             include_once MY_PLUGIN_PATH . 'includes/utilities.php';
 
             // Add shortcut capabilities
@@ -60,9 +52,6 @@ if( !class_exists('MyPlugin') )
 
             // Define the locale for this plugin for internationalization.
             add_action('plugins_loaded', 'my_plugin_load_textdomain');
-
-
-            //include_once MY_PLUGIN_PATH . 'public/my-plugin-public.php';
         }
     }
     $myPlugin = new MyPlugin;

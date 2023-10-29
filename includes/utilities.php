@@ -70,7 +70,6 @@ function handle_form($my_plugin_submission) {
 
 /**
  * Load the plugin text domain for translation.
- * This action is fired in admin/my-plugin-admin.php
  */
 function my_plugin_load_textdomain() {
     load_plugin_textdomain( 
