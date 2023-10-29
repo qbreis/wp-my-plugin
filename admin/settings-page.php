@@ -9,7 +9,7 @@
 ?>
 
 <?php
-if (!defined('ABSPATH')) {
+if(!defined('ABSPATH')){
     die('Not allowed!');
 }
 ?>
@@ -22,8 +22,8 @@ if (!defined('ABSPATH')) {
         <?=MY_PLUGIN_DATA['Plugin Name']?> (v<?=MY_PLUGIN_DATA['Version']?>)
     </h1>
     <?php
-    $my_plugin_submission = (isset($_POST['my_plugin_submission']))?sanitize_text_field( $_POST['my_plugin_submission'] ):'';
-    if( $my_plugin_submission){
+    $my_plugin_submission = (isset($_POST['my_plugin_submission']))?sanitize_text_field($_POST['my_plugin_submission']):'';
+    if($my_plugin_submission){
     ?>
         <div class="updated">
             <p><?=__('Your fields were saved!', 'my-plugin');?></p>
@@ -31,11 +31,10 @@ if (!defined('ABSPATH')) {
     <?php
     }
     ?>
-    <?php //wp_editor( 'zxczc', 'test-wp-editor-2' ); ?>
     <form method="POST">
-        <?php wp_nonce_field( 'my_plugin_update', 'my_plugin_submission' ); ?>
+        <?php wp_nonce_field('my_plugin_update', 'my_plugin_submission');?>
 
-        <table class="form-table" onclick="showHide( '#my_plugin_is_active', '.my-plugin-active-settings' );">
+        <table class="form-table" onclick="showHide('#my_plugin_is_active', '.my-plugin-active-settings');">
             <tbody>
                 <tr>
                     <th>
@@ -50,9 +49,9 @@ if (!defined('ABSPATH')) {
                             type="checkbox" 
                             value="1" 
                             class="regular-text"
-                            <?php if ( get_option('my_plugin_is_active') ) echo ' checked="checked"';?> 
+                            <?php if(get_option('my_plugin_is_active')) echo ' checked="checked"';?> 
                             />
-                        <label for="my_plugin_is_active"><?= __('Active', 'my-plugin');?></label>
+                        <label for="my_plugin_is_active"><?=__('Active', 'my-plugin');?></label>
                     </td>
                 </tr>
             </tbody>
@@ -70,7 +69,7 @@ if (!defined('ABSPATH')) {
                             name="my_plugin_custom_field" 
                             id="my_plugin_custom_field" 
                             type="text" 
-                            value="<?php echo get_option('my_plugin_custom_field'); ?>" 
+                            value="<?=get_option('my_plugin_custom_field');?>" 
                             class="regular-text" 
                             />
                     </td>
@@ -78,7 +77,7 @@ if (!defined('ABSPATH')) {
             </tbody>
         </table>
         <p class="submit">
-            <input type="submit" name="submit" id="submit" class="button button-primary" value="<?=__( 'Save' )?>">
+            <input type="submit" name="submit" id="submit" class="button button-primary" value="<?=__('Save')?>">
         </p>
     </form>
     

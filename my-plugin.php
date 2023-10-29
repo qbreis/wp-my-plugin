@@ -14,7 +14,7 @@
  * 
  */
 
-if( !defined('ABSPATH') ) {
+if(!defined('ABSPATH')){
     die('You cannot be here');
 }
 
@@ -22,9 +22,9 @@ if(!class_exists('MyPlugin')){
     class MyPlugin{
 
         public function __construct(){
-            define( 'MY_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-            define( 'MY_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-            define( 'MY_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+            define('MY_PLUGIN_PATH', plugin_dir_path(__FILE__));
+            define('MY_PLUGIN_URL', plugin_dir_url(__FILE__));
+            define('MY_PLUGIN_BASENAME', plugin_basename(__FILE__));
             define(
                 'MY_PLUGIN_DATA', 
                 get_file_data(
