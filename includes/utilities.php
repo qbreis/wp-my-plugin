@@ -1,5 +1,5 @@
 <?php
-
+// If this file is called directly, abort.
 if(!defined('ABSPATH')){
     die('Not allowed!');
 }
@@ -16,7 +16,7 @@ function create_plugin_settings_page(){
         'plugin_settings_page_content',                                 // Callback
         (MY_PLUGIN_DATA['Menu admin icon'])                             // Icon
             ?
-            MY_PLUGIN_URL.MY_PLUGIN_DATA['Menu admin icon']             // ... custom menu icon
+            MY_PLUGIN_URL.MY_PLUGIN_DATA['Menu admin icon']             // ... custom menu icon if it is defined in Plugin Header Fields as 'Menu admin icon'
             :
             'dashicons-admin-generic',                                  // ... default menu icon if custom is not defined
         100                                                             // Position
