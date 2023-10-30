@@ -1,6 +1,8 @@
 
 # My Plugin
 
+Generic WordPress plugin skeleton.
+
 ## Reference links
 
 - YouTube tutorial to create a simple plugin: [Simple WordPress Plugin Development - Start to Finish](https://www.youtube.com/watch?v=Bx0oisOOqNg).
