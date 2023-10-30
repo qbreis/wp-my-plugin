@@ -19,6 +19,7 @@ if(!defined('ABSPATH')){
     die('You cannot be here');
 }
 
+// Checking whether the name of the class is already taken -- the rest to tackle the naming collision problem must be taken care of by PHP!!
 if(!class_exists('MyPlugin')){
     /**
      * The core plugin class.
