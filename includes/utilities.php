@@ -32,10 +32,10 @@ function plugin_settings_page_content(){
     // Register all of the hooks related to the admin-specific area functionality --define_admin_hooks()
 
     // Register the JavaScript for the admin area.
-    wp_enqueue_script('my-plugin', MY_PLUGIN_URL . 'admin/js/my-plugin.js');
+    wp_enqueue_script('my-plugin', MY_PLUGIN_URL.'admin/js/my-plugin.js');
 
     // Register the stylesheets for the admin area.
-    wp_enqueue_style('my-plugin', MY_PLUGIN_URL . 'admin/css/my-plugin.css');
+    wp_enqueue_style('my-plugin', MY_PLUGIN_URL.'admin/css/my-plugin.css');
 
     // It sanitize post fields if found.
     $my_plugin_submission = (
@@ -75,7 +75,7 @@ function my_plugin_load_textdomain(){
     load_plugin_textdomain(
         'my-plugin', 
         false,  
-        dirname(MY_PLUGIN_BASENAME) . '/languages/' 
+        dirname(MY_PLUGIN_BASENAME).'/languages/' 
     );
 }
 

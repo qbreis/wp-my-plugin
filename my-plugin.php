@@ -14,14 +14,24 @@
  * 
  */
 
+// If this file is called directly, abort.
 if(!defined('ABSPATH')){
     die('You cannot be here');
 }
 
 if(!class_exists('MyPlugin')){
+    /**
+     * The core plugin class.
+     * A class definition that includes attributes and functions used across both the
+     * public-facing side of the site and the admin area.
+     */
     class MyPlugin{
 
+        /**
+         * Define the core functionality of the plugin.
+         */
         public function __construct(){
+            // Define constants for some plugin params.
             define('MY_PLUGIN_PATH', plugin_dir_path(__FILE__));
             define('MY_PLUGIN_URL', plugin_dir_url(__FILE__));
             define('MY_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -30,7 +40,7 @@ if(!class_exists('MyPlugin')){
                 get_file_data(
                     __FILE__, 
                     array(
-                        'Version' => 'Version', 
+                        'Version' => 'Version',                     // Start at version 1.0.0 and use SemVer - https://semver.org
                         'Plugin Name' => 'Plugin Name',
                         'Text Domain' => 'Text Domain',
                         'Menu admin icon' => 'Menu admin icon',
@@ -41,8 +51,11 @@ if(!class_exists('MyPlugin')){
             );
         }
 
+        /**
+         * Define the plugin logic.
+         */
         public function initialize(){
-            include_once MY_PLUGIN_PATH . 'includes/utilities.php';
+            include_once MY_PLUGIN_PATH.'includes/utilities.php';
 
             // Add shortcut capabilities
             add_shortcode('my-plugin', 'my_plugin_shortcode');
